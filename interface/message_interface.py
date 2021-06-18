@@ -186,7 +186,7 @@ class MessageInterface(object):
         sleep(1)
         msg_template = SEND_MESSAGE_TEMPLATE.format(msg.subject, msg.msg, msg.created_on)
         print(msg_template)
-        get_valid_input("[+] Press any key plus enter the key to continue: ")
+        get_valid_input("[+] Press any key plus enter key to continue: ")
         print("[+] Display complete")
         sleep(1)
 

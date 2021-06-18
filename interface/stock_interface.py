@@ -49,8 +49,8 @@ class StockInterfaceScreen(object):
                 continue
             break
 
-    @classmethod
-    def prompt_user_for_item_details(cls):
+    @staticmethod
+    def prompt_user_for_item_details():
 
         title = get_valid_input("[+] Enter the name for the item: ")
         price = get_valid_number("[+] Enter the price for the item: ")
@@ -62,7 +62,7 @@ class StockInterfaceScreen(object):
             sleep(1)
             staff = True
         else:
-            print("[+] The item will be added to both the staff and student menu")
+            print("[+] The item will be added to the staff menu only")
             staff = False
         return title, price, quantity, staff
 
@@ -80,7 +80,7 @@ class StockInterfaceScreen(object):
                 self._get_questions_for_update()
                 print("[+] Done")
             else:
-                print("[-] There is not item in stock with that id")
+                print("[-] There is no item in stock with that id")
 
     def _get_questions_for_update(self):
 
