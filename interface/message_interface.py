@@ -27,7 +27,7 @@ class MessageInterface(object):
                 self._go_to_delete_messages()
             elif choice == "3":
                 print("[+] Returning to menu, please wait")
-                running = False
+                return
             else:
                 print("[+] Incorrect choice, choice must be between 1-3")
         return
@@ -36,9 +36,9 @@ class MessageInterface(object):
 
         running = True
 
-        choice = Menu.view_messages()
-
         while running:
+            choice = Menu.view_messages()
+
             if choice == "1":
                 self._display_messages_helper(messages=self._msg.get_all_read_msg(), title="READ MESSAGES")
                 sleep(1)
@@ -51,6 +51,7 @@ class MessageInterface(object):
                 self._display_messages_helper(messages=Message.get_all_messages(), title="MESSAGES", all_messages=True)
                 self._prompt_user_if_they_want_view_message()
                 print("[+] Returning to message menu, please wait")
+                sleep(1)
             elif choice == "4":
                 running = False
             else:
@@ -165,7 +166,6 @@ class MessageInterface(object):
                     print("[-] Incorrect message id entered, please try again")
         else:
             print("[+] Returning to the main message menu, please wait..\n")
-            self.go_to_message_screen()
             sleep(1)
 
     def _view_message(self, msg):
@@ -175,6 +175,8 @@ class MessageInterface(object):
         if msg.read:
             print("[+] Message has already been marked as read, no need to mark message as read")
         else:
+            print("[+] Message is marked as unread")
+            sleep(1)
             print("[+] Marking message as read, please wait...")
             Message.mark_message_as_read(msg.id)
             sleep(1)
