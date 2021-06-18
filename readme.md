@@ -1,9 +1,9 @@
 
-I applied for a freelance position at a company using Python, after getting past the initial stage I was offered a small 
-programming task for the second stage to validate my problem solving skills and Python skills. The task is stated
+I recently applied for a freelance position contract. After getting past the initial first stage. The first of four stages I was offered a small 
+programming task for the second stage in order to validate my problem solving skills and Python skills. The task is stated
 below.
 
-###Problem requirements
+### Problem requirements
 
 A company has hired you to build a command line interface (CLI) for a virtual vending machine that must be programmed 
 in Python. The vending machine must be able to keep a record of the items in stock such as 
@@ -17,7 +17,7 @@ The above requirement is a must and must be added to virtual vending machine but
 extra features you want to the virtual vending machine, in fact we hope you do.
 
 
-####New Features added not part of the original requirements
+#### New Features added not part of the original requirements
     1. Administrator screen protected by a login and password
     
         1. The admin can add new items to the stock
@@ -48,7 +48,7 @@ extra features you want to the virtual vending machine, in fact we hope you do.
     
     
 
- #####Virtual machine password
+ ##### Virtual machine password
             1. Admin login credentials
                 login ID -> admin
                 password -> password
@@ -59,7 +59,7 @@ extra features you want to the virtual vending machine, in fact we hope you do.
                 
      
     
- ###Virtual vending machine
+ ### Virtual vending machine
  
             --------Login Screen-----------
     
@@ -182,5 +182,5 @@ extra features you want to the virtual vending machine, in fact we hope you do.
                 
 
 
-###Usage
+### Usage
 To run it simple type python app.py after you have downloaded or clone the project.
