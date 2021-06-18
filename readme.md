@@ -50,7 +50,7 @@ you want to the virtual vending machine, in fact we hope you do.
  ##### Virtual machine password
             1. Admin login credentials
                 login ID -> admin
-                password -> password
+                password -> admin
             
             2. Staff login credentials
                 login ID -> staff01
