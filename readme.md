@@ -17,7 +17,7 @@ The above requirement is a must and must be added to virtual vending machine but
 extra features you want to the virtual vending machine, in fact we hope you do.
 
 
-#### New Features added not part of the original requirements
+#### New Features added that are not part of the original requirements
     1. Administrator screen protected by a login and password
     
         1. The admin can add new items to the stock
