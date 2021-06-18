@@ -10,15 +10,19 @@ from models.stock import Stock
 from printable import display
 
 _DELAY = 0.7
+_STARTUP = False
 
 
 def main():
-
+    global _STARTUP
     running = True
 
     while running:
 
-        Menu.welcome_message()
+        if not _STARTUP:
+            Menu.welcome_message()
+
+            _STARTUP = True
         print("[+] Displaying login screen, please wait...")
         sleep(_DELAY)
 

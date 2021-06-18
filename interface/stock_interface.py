@@ -56,12 +56,13 @@ class StockInterfaceScreen(object):
         price = get_valid_number("[+] Enter the price for the item: ")
         quantity = get_valid_input("[+] Enter the qty for the item: ")
 
-        resp = get_valid_input("[+] Is the item only for staff (y) for yes or any key for No: ")
+        resp = get_valid_input("[+] Is the item only for staff (y) for yes or enter for No: ")
         if resp.lower() == "y":
-            print("[+] The item has only been added to the staff menu", end="\n")
+            print("[+] The item will only be added to the staff menu", end="\n")
             sleep(1)
             staff = True
         else:
+            print("[+] The item will be added to both the staff and student menu")
             staff = False
         return title, price, quantity, staff
 
