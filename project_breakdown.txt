@@ -1,0 +1,285 @@
+                                BREAKDOWN DECONSTRUCTION
+
+
+[**][1] Root Menu
+
+    [-][1.1] Login Screen is displayed
+
+        [1.1.a] Administrator
+
+             [1.1.a.1] Ask for login credentials
+                      [+] Enter admin login ID
+                      [+] Enter admin password
+
+             [1.1.a.2] Check login credentials
+
+                      [-] Incorrect detail
+                            run step [1.1.a.1] again
+
+                      [+] Correct details - display admin menu
+
+                           [1.1.a.3] Admin Menu screen
+
+                                [1.1.a.3.1] Add item to stock
+
+                                            [1.1.a.3.1.a] Enter the title for the item
+                                            [1.1.a.3.1.b] Enter the price for the item
+                                            [1.1.a.3.1.c] Enter the title for the item
+                                            [1.1.a.3.1.d] Is the item only for staff (y) for yes or any key for No:
+
+                                            if response at step [1.1.a.3.1.d] is (y)
+                                                [+] Inform user that item has only been added to the staff menu
+                                            if response at step [1.1.a.3.1.d] is not (y)
+                                                go to step [1.1.a.3.1.2]
+
+                                        [1.1.a.3.1.2]
+                                            [1.1.a.3.1.2.a] Would you like to add another item Y enter key for no
+                                                if answer is "Y" -> go to "Add item to stock" step [1.1.a.3.1]
+                                                if answer is not "y" -> go to "Admin screen" step [1.1.a.3]
+
+                                [1.1.a.3.2] Remove item from stock
+                                        [1.1.a.3.2.a] Enter the ID of the item you want to remove
+
+                                        if ID at step [1.1.a.3.2.a] is incorrect
+                                            [-] Failed to remove product from the item because the ID entered was incorrect
+                                            [+] go to "Admin screen" step [1.1.a.3]
+
+                                        if ID at step [1.1.a.3.2.a] is correct
+                                           [+] Successfully removed item from the item
+                                           [+] go to "Admin screen" step [1.1.a.3]
+
+                                [1.1.a.3.3] Display all items in stock
+
+                                    [1.1.a.3.3.a] Stock found
+
+                                            [+] if items are in stock display all items in the stock
+                                            [+] go to "Admin screen" step [1.1.a.3]
+
+                                    [1.1.a.3.3.b] Stock not found
+                                            [-] Display message informing user that stock is empty
+                                            [+] go to "Admin screen" step [1.1.a.3]
+
+
+                                 [1.1.a.3.3.4] Display empty items
+
+                                        [1.1.a.3.3.4.a] Stock found
+
+                                            [+] Display empty stock
+                                            [+] go to "Admin screen" step [1.1.a.3]
+
+                                        [1.1.a.3.3.4.b] Stock not found
+                                            [-] Display message informing user that stock is empty
+                                            [+] go to "Admin screen" step [1.1.a.3]
+
+                                [1.1.a.3.3.4.5] Update stock
+                                    [1.1.a.3.3.4.5.a] Enter the ID of the stock you want to update or (M) for the (Main Menu)
+
+                                    [1.1.a.3.3.4.5.a.1] Correct ID entered
+
+                                        [+] Do you want to change the item price (y) for YES or the (Enter key for NO):
+                                                [1.1.a.3.3.4.5.a.1.a] User enters (y)
+                                                [1.1.a.3.3.4.5.a.1.a.1] Enter the new price
+
+                                                [+] if step [1.1.a.3.3.4.5.a.1.a.1] is empty or not a integer or float
+                                                    go back to step [1.1.a.3.3.4.5.a.1.b.a.1]
+
+                                                [+] if step [1.1.a.3.3.4.5.a.1.a.1] is correct
+                                                    [+] Successfully updated price
+
+                                        [+] Do you want to change the qty (y) for YES or (Enter key for NO):
+                                                [1.1.a.3.3.4.5.a.1.b] User enters (y)
+
+                                                [1.1.a.3.3.4.5.a.1.b.a] Enter the new qty
+
+                                                [+] if step [1.1.a.3.3.4.5.a.1.b.a] is empty or not a integer or a float
+                                                    go back to step [1.1.a.3.3.4.5.a.1.b.a
+                                                [+] if step [1.1.a.3.3.4.5.a.1.b.a] is correct
+                                                    [+] Successfully updated quantity
+
+                                    [1.1.a.3.3.4.5.a.2] Do you want to view the update item (y) for YES or the (Enter key for NO)
+                                        [1.1.a.3.3.4.5.a.2.1] User picks (y)
+                                            [+] Display updated item if either the price or item was updated
+                                        [1.1.a.3.3.4.5.a.2.1] User hits any key
+                                            [+] Display updated item if either the price or item was updated
+
+                                    [1.1.a.3.3.4.5.a.3] [+] go to "Admin screen" step [1.1.a.3]
+
+
+                           [1.1.a.3.3.4.6] Messages Screen
+
+                                    [1.1.a.3.3.4.6.1] View read messages
+
+                                         [1.1.a.3.3.4.6.1.a] If Messages are Found
+                                                [+] Display all messages mark as read
+                                                [+] Press (R) to mark message as unread, (A) to Mark ALL messages, (V) to view the message (b) to go back to message menu:
+
+                                                [+] if choice is (R)
+                                                    [+] Enter the msg ID you want to mark as read:
+                                                         [+] Correct ID
+                                                                Successfully mark message as read
+                                                         [+] Incorrect ID
+                                                             [-] Failed to mark message as read
+                                                             [-] Go back to [1.1.a.3.3.4.6] Messages Screen
+
+                                                [+] if choice is (A)
+                                                     Mark all messages as read and then inform user
+
+                                                [+] if choice is (V)
+                                                    prompt with question
+                                                       [+] Do you want to view a message (y) YES or any key for no:
+
+                                                            [+] Yes response
+                                                                [+] prompt: Enter the message id
+
+                                                                    [-] correct ID received
+                                                                        [-] Display full message to user
+
+                                                                 [-] Incorrect ID received
+                                                                    [+] Inform user of incorrect choice ask them to enter ID again
+
+                                        6.2 Messages not found
+                                                - Inform user that there are no messages to view
+
+                                    [2] View unread messages
+                                        [+] Messages Found
+                                            [-] Display all messages mark as unread
+                                                [+] Press (U) to mark message as unread, (A) to Mark ALL messages, (V) to view the message (b) to go back to message menu:
+
+                                                [+] if choice is (U)
+                                                    [-] Enter the msg ID you want to mark as unread:
+                                                         [*] Correct ID
+                                                                 Successfully mark message as unread
+                                                         [*] Incorrect ID
+                                                             Failed to mark message as read -> loop to message menu
+
+                                                [+] if choice is (A)
+                                                     Mark all messages as unread and then inform user
+
+                                                [+] if choice is (V)
+                                                     [-] Do you want to view a message (y) YES or any key for no:
+
+                                                        [+] if choice is (y)
+                                                            [+] Enter the message id
+                                                                 [+] if correct ID is received
+                                                                        [+] Mark message as read
+                                                                        [+] Display full message to user
+
+                                                                 [-] Incorrect ID received
+                                                                    [+] Inform user of incorrect choice ask them to enter ID again
+
+                                        [-] Messages not found
+                                            [+] Inform user that there are no messages to view
+                                            [+] Go to step [1.1.a.3.3.4.6] Messages Screen
+
+                                    [3] Display all messages
+                                        [+] if messages exist
+                                            [+] Display all messages regardless of whether the message is read or unread
+                                            [+] Ask user if the want to view individual message y for yes any key for no
+                                            [+] if choice is (Y)
+                                                [+] Enter the message id
+                                                    [+] if correct ID received
+                                                           [+] Mark message as read
+                                                           [+] Display full message to user
+
+                                                    [+] if Incorrect ID received
+                                                           [+] Inform user of incorrect choice
+                                                           [-] Ask them to enter ID again
+
+                                        [+] if no messages exists
+                                            [+] Display there are no messages to view
+
+
+                                    [4] Delete message
+                                        [4a] Enter the message id you want to delete or (b):
+                                             - if message id received is b
+                                                - Go to messages menu
+                                             - messsage id successful
+                                                 - Inform user that message was deleted successful
+                                                 - loop back to 4a
+                                             - message id not successful
+                                                - inform user that message was not deleted, incorrect ID
+                                                - loop back to 4a
+
+
+                                    [5] Delete all messages
+                                        [5a] Delete all messages
+                                        [5b] Go back to main messages
+
+                                    [6] Back to main screen
+                                        [6a] Go back to Admin screen
+                                            [1] Add item to stock
+                                            [2] Remove item from stock
+                                            [3] Display all items in stock
+                                            [4] Display empty items
+                                            [5] Update stock
+                                            [6] Messages
+                                            [7] Main menu
+
+                                [7] Main menu
+                                    [7a] Go to root menu
+                                        [1] Administrator
+                                        [2] Staff
+                                        [3] Student
+                                        [4] Quit
+
+
+
+    [2] Staff
+        [a] Ask for staff credentials
+            [+] Enter staff login ID
+            [+] Enter staff password
+
+              -> Check login credentials
+              -> Incorrect details go [2a]
+
+            [a.1] If login credentials are successful
+                [+] The password was successful, displaying staff menu
+
+                [a.2] Staff Menu
+                        [a.2.1] Enter the product ID for the item you want to purchase:
+                            correct ID
+                                - Display item
+                                    - ID
+                                    - Name
+                                    - Price
+                                    - Quantity
+
+                                [a.2.2] Enter the amount for the item
+                                    [a.2.2.a]
+                                        - If item has remaining balance, show user amount remaining
+                                            - Prompt user if they want to cancel (c) order or any key to continue with order
+                                                [a.2.2.a.1]  Choices
+                                                [a.2.2.a.2]  User enter (c)
+                                                        [+] Cancelling order, returning the total amount user entered, please wait..
+                                                        [+] Returned the total amount of entered up to the point by user
+                                                        [+] Returns to the main screen
+                                                              [1] Administrator
+                                                              [2] Staff
+                                                              [3] Student
+                                                              [4] Quit
+
+                                                [a.2.2.a.3] User any key to continue with order
+                                                                - Ask for remaining amount
+                                                                - If amount is still remaining running steps [a.2.2.a] until amount remaining is 0
+                                                 [a.2.2.a.4] If amount remaining is 0
+                                                            - Display receipt
+                                                            - Go back to Login screen
+
+                                    [a.2.2.b] if remaining item balance is 0
+                                        - Prompt user if they want to cancel (c) order or any key to continue with order
+                                        - User picks (C)
+                                            - run steps [a.2.2.a.2]
+                                        - User hit any key to continue
+                                            - run steps [a.2.2.a.4]
+
+
+                            Incorrect ID
+                                Go back to [a.2.1]
+
+
+
+    - Student
+        - [+] Enter the product ID for the item you want to purchase:
+        - Run step from staff menu [a.2.1]
+
+    - Quit
