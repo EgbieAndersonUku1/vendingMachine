@@ -54,7 +54,7 @@ class StockInterfaceScreen(object):
 
         title = get_valid_input("[+] Enter the name for the item: ")
         price = get_valid_number("[+] Enter the price for the item: ")
-        quantity = get_valid_input("[+] Enter the qty for the item: ")
+        quantity = get_valid_number("[+] Enter the qty for the item: ")
 
         resp = get_valid_input("[+] Is the item only for staff (y) for yes or enter for No: ")
         if resp.lower() == "y":
