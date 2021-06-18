@@ -80,7 +80,9 @@ def _go_back_to_main_screen():
 
 def _get_admin_screen():
     sleep(_DELAY)
-    while True:
+    running = True
+
+    while running:
         choice = Menu.admin_screen_display()
 
         if choice == "1":
@@ -103,7 +105,7 @@ def _get_admin_screen():
             print("\n[+] Displaying message screen, please wait..")
             sleep(_DELAY)
             MessageInterface().go_to_message_screen()
-
+            running = False
         elif choice == "7":
             _go_back_to_main_screen()
 
