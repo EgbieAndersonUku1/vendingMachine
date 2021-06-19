@@ -45,7 +45,7 @@ class Stock(object):
 
         if item:
             msg = UPDATED_PRICE_STRING_TEMPLATE.format(item.id, item.name, item.price)
-            Message(subject="Re: An item has been updated", msg=msg).send()
+            Message(subject="Re: Item price update", msg=msg).send()
             return item
         return False
 
@@ -62,7 +62,7 @@ class Stock(object):
                 subject = "Re: Empty stock"
             else:
                 msg = UPDATED_STOCK_STRING_TEMPLATE.format(item.id, item.qty)
-                subject = "Re: A new stock has been added"
+                subject = "Re: Item quantity update"
 
             Message(subject=subject, msg=msg).send()
 
