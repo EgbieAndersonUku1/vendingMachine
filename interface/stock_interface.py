@@ -21,7 +21,7 @@ class StockInterfaceScreen(object):
     def display_empty_stock_screen(self):
         print("[*] Displaying all unavailable stock, please wait...")
         sleep(_DELAY)
-        display(self._stock.get_items_not_in_stock(), title="Displaying unavailable item in stock", admin=True)
+        display(self._stock.get_items_not_in_stock(), title="Displaying unavailable item in stock", admin=True, show_empty=True)
 
     def display_entire_stock_screen(self):
         print("[+] Displaying entire stock, please wait..")
@@ -89,13 +89,15 @@ class StockInterfaceScreen(object):
         price = input("\n[+] Do you want to change the item price (y) for YES or the (Enter key for NO): ")
 
         if price.lower() == "y":
-            item = self._update_item_helper(self._item_id, update_price=True)
+            price_prompt = "Enter the new item price (£): "
+            item = self._update_item_helper(price_prompt, self._stock.update_price)
             print("[+] Successfully updated item price", end="\n")
 
         quantity = input("[+] Do you want to change the qty (y) for YES or (Enter key for NO): ")
 
         if quantity == "y":
-            item = self._update_item_helper(self._item_id, update_qty=True)
+            qty_prompt = "Enter the new qty: "
+            item = self._update_item_helper(qty_prompt, self._stock.update_quantity)
             print("[+] Successfully updated price quantity", end="\n")
         if item:
 
@@ -103,23 +105,17 @@ class StockInterfaceScreen(object):
             self.view_updated_item_screen(item)
             return True
 
-    def _update_item_helper(self, item_id, update_price=False, update_qty=False):
+    def _update_item_helper(self, prompt, stock_update_func):
 
         running = True
         item = None
 
         while running:
+            resp = get_valid_number(f"[-] {prompt} ")
+            if resp:
+                item = stock_update_func(self._item_id, resp)
+                running = False
 
-            if update_price:
-                price = get_valid_number("[-] Enter the new item price (£): ")
-                if price:
-                    item = Stock.update_price(item_id, price)
-                    running = False
-            elif update_qty:
-                qty = int(get_valid_number("[-] Enter the new qty: "))
-                if qty:
-                    item = Stock.update_quantity(item_id, qty)
-                    running = False
         return item
 
     def view_updated_item_screen(self, item):

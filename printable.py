@@ -3,7 +3,7 @@ from time import sleep
 _DELAY = 0.8
 
 
-def display(stock, title, display_staff_stock=False, admin=False):
+def display(stock, title, display_staff_stock=False, admin=False, show_empty=False):
 
     if not stock:
         print("\n[+] There is no stock to display.")
@@ -12,7 +12,8 @@ def display(stock, title, display_staff_stock=False, admin=False):
         if admin:
             print("[+] Fetching admin screen..")
             sleep(_DELAY)
-            print("[+] Displaying both empty and non-empty stock")
+            if not show_empty:
+                print("[+] Displaying both empty and non-empty stock")
             sleep(_DELAY)
             print("[+] Fetching items from stock database, please wait..")
             sleep(_DELAY)
