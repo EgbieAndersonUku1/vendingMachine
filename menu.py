@@ -36,7 +36,7 @@ class Menu(object):
     @staticmethod
     def welcome_message():
         print(WELCOME_MENU)
-        return get_valid_input("[+] Press any key followed by the Enter key to continue: ")
+        return input("[+] Press the Enter key to continue: ")
 
     @staticmethod
     def view_messages():

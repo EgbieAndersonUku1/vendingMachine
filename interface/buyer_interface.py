@@ -120,7 +120,7 @@ class BuyerInterfaceScreen(object):
 
         sleep(1)
         if Receipt(self._item, self._get_change(), self._amount_received).print_receipt():
-            print("[+] Successfully print receipt for user")
+            print("[+] Successfully printed receipt for user")
         sleep(1)
 
         print("[+] Making a note for admin about item sale")
