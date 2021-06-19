@@ -13,8 +13,5 @@ RECEIPT_TEMPLATE = """
 
             Thank you for using our virtual vending machine
 
-    \n\n<------------- END OF RECEIPT ----------------------------->\n
-
-
-
+    \n\n<------------- END OF RECEIPT ----------------------------->
 """

@@ -17,13 +17,14 @@ class Receipt(object):
         purchase_date = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
         sleep(0.1)
 
-        print("Displaying receipt, please wait...")
+        print("[+] Displaying receipt, please wait...")
         sleep(0.5)
 
         receipt = RECEIPT_TEMPLATE.format(self._item.id, self._item.name, self._item.price,
                                           purchase_date, self._amount_received, self._change)
         print(receipt)
-        print("[+] Done", end="\n")
+        input("Press enter to continue: ")
+        return True
 
     def _to_json(self):
         return self.__dict__.copy()

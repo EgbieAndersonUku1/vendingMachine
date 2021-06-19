@@ -63,11 +63,7 @@ class BuyerInterfaceScreen(object):
             self._prompt_user_if_they_want_cancel_purchase()
 
         if not self._is_purchase_cancelled:
-            Stock.update_quantity(id=self._item.id, new_quantity=int(self._item.qty) - 1)
-            Receipt(self._item, self._get_change(), self._amount_received).print_receipt()
-            msg = ITEM_BOUGHT_STRING_TEMPLATE.format(self._item.id, self._item.name.title(), self._item.price)
-            Message(subject="An item has been sold", msg=msg).send()
-            self._item = None
+            self._item_purchase_cleanup()
 
         return True
 
@@ -112,6 +108,27 @@ class BuyerInterfaceScreen(object):
             sleep(0.5)
             return True
         return False
+
+    def _item_purchase_cleanup(self):
+
+        print("[+] Updating stock, please wait")
+        if Stock.update_quantity(id=self._item.id, new_quantity=int(self._item.qty) - 1):
+            print("[+] Successfully updated stock")
+        else:
+            print("[+] Failed to update stock quantity")
+        print("[+] Generating receipt for user")
+
+        sleep(1)
+        if Receipt(self._item, self._get_change(), self._amount_received).print_receipt():
+            print("[+] Successfully print receipt for user")
+        sleep(1)
+
+        print("[+] Making a note for admin about item sale")
+
+        msg = ITEM_BOUGHT_STRING_TEMPLATE.format(self._item.id, self._item.name.title(), self._item.price)
+        if Message(subject="An item has been sold", msg=msg).send():
+            print("[+] Admin has successfully been informed")
+        self._item = None
 
     def _prompt_user_for_item_id(self):
 

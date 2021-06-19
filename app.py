@@ -68,8 +68,6 @@ def go_to_purchase_screen(screen_title, display_staff_menu):
 
     BuyerInterfaceScreen().go_to_purchase_item_screen()
     sleep(_DELAY)
-    print("[+] Returning to main menu, please wait")
-    sleep(_DELAY)
 
 
 def _go_back_to_main_screen():
@@ -98,7 +96,7 @@ def _get_admin_screen():
             resp = stock_interface.get_update_item_screen()
 
             if resp == "m":
-                print("\nPlease wait, returning to main menu")
+                print("\n[+] Please wait, returning to main menu..")
                 sleep(_DELAY)
                 main()
         elif choice == "6":

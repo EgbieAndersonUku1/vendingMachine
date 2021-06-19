@@ -26,7 +26,6 @@ class MessageInterface(object):
                 sleep(1)
                 self._go_to_delete_messages()
             elif choice == "3":
-                print("[+] Returning to menu, please wait")
                 running = False
             else:
                 print("[+] Incorrect choice, choice must be between 1-3")
