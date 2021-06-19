@@ -27,10 +27,10 @@ class MessageInterface(object):
                 self._go_to_delete_messages()
             elif choice == "3":
                 print("[+] Returning to menu, please wait")
-                return
+                running = False
             else:
                 print("[+] Incorrect choice, choice must be between 1-3")
-        return
+        return True
 
     def _go_to_view_messages(self):
 

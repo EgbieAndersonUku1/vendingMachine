@@ -54,7 +54,7 @@ def main():
             print("[+[ Thanking you for using the virtual machine, see next time")
             sleep(0.5)
             print("[+] Goodbye")
-            running = False
+            exit()
 
         else:
             print("[-] Incorrect choice entered, try entering number between 1-4")
@@ -104,8 +104,9 @@ def _get_admin_screen():
         elif choice == "6":
             print("\n[+] Displaying message screen, please wait..")
             sleep(_DELAY)
-            MessageInterface().go_to_message_screen()
-            running = False
+            if MessageInterface().go_to_message_screen():
+                running = False
+
         elif choice == "7":
             _go_back_to_main_screen()
 

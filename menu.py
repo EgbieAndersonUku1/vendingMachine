@@ -46,7 +46,7 @@ class Menu(object):
                 [1] View read messages
                 [2] View unread messages
                 [3] View all messages read and unread
-                [4] Back to main screen
+                [4] Back to main message menu
 
              """)
         return get_valid_input("[+] Enter your choice: ")
@@ -58,7 +58,7 @@ class Menu(object):
 
                 [1] Delete a single message
                 [2] Delete all messages
-                [3] Back to main screen
+                [3] Back to message menu
 
                  """)
         return get_valid_input("[+] Enter your choice: ")
