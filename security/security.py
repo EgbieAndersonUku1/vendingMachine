@@ -22,14 +22,21 @@ def get_valid_input(prompt):
 
 
 def get_valid_number(prompt):
+    running = True
 
-    while True:
+    while running:
         try:
-            resp = float(input(prompt))
+            value = float(input(prompt))
         except ValueError:
-            pass
+            print("[-] The amount entered must be a float or an integer, try again...")
         else:
-            if not resp:
+            if not value:
                 print("[-] The value entered cannot be 0, try again...")
+            elif value < 0:
+                print("[-] The value entered cannot be a negative value, please try adding a positive value")
+
             else:
-                return resp
+                running = False
+    return value
+
+

@@ -3,7 +3,7 @@ from time import sleep
 from models.message import Message
 from models.receipt import Receipt
 from models.stock import Stock
-from security.security import get_valid_input
+from security.security import get_valid_input, get_valid_number
 from templates.message.message import ITEM_BOUGHT_STRING_TEMPLATE
 from utils.calculator import Calculate
 
@@ -82,30 +82,13 @@ class BuyerInterfaceScreen(object):
         return change
 
     def _prompt_user_for_the_remaining_item_amount(self):
-        return self._prompt_user("[+] Enter the remaining amount (£) : ")
+        return get_valid_number("[+] Enter the remaining amount (£) : ")
 
     def _get_remaining_balance(self):
         return Calculate(self._item.price, self._amount_received).calculate()
 
     def _prompt_user_for_item_amount(self):
-        return self._prompt_user("\n[+] Enter the amount for the item: ")
-
-    def _prompt_user(self, prompt):
-        running = True
-
-        while running:
-            try:
-                amount = float(input(prompt))
-            except ValueError:
-                print("[-] The amount entered must be a float or an integer, try again...")
-                continue
-
-            if amount < 0:
-                print("[-] The amount entered cannot be a negative value, please try adding a positive value")
-            else:
-                running = False
-
-        return amount
+        return get_valid_number("\n[+] Enter the amount for the item: ")
 
     def _prompt_user_for_item_details(self):
 
