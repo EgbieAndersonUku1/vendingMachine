@@ -1,6 +1,4 @@
 
-I recently applied for a freelance position. After getting past the initial first stage. The first of four stages I was offered a small 
-programming task for the second stage in order to validate my problem solving skills and Python skills. The task is stated below.
 
 ### Problem requirements
 
